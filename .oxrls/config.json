@@ -2,7 +2,7 @@
   "schema": "https://oxrelease.dev/schema.json",
   "releaseDir": ".oxrls",
   "changelog": true,
-  "generatePackagesChangelog": false,
+  "generatePackagesChangelog": true,
   "generateGlobalChangelog": false,
   "updateInternalDependencies": "patch",
   "baseBranch": "main",
