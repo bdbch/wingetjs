@@ -1,6 +1,7 @@
 import { expect, test } from "vite-plus/test";
-import { fn } from "../src/index.ts";
+import { WingetClient, WingetPlatformError } from "../src/index.ts";
 
-test("fn", () => {
-  expect(fn()).toBe("Hello, tsdown!");
+test("throws WingetPlatformError on non-Windows", async () => {
+  const client = new WingetClient();
+  await expect(client.run(["--version"])).rejects.toThrow(WingetPlatformError);
 });

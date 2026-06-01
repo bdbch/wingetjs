@@ -1,23 +1,36 @@
 {
-  "name": "wingetjs",
-  "version": "0.0.0",
-  "description": "A starter for creating a TypeScript package.",
-  "homepage": "https://github.com/author/library#readme",
-  "bugs": {
-    "url": "https://github.com/author/library/issues"
-  },
+  "name": "@bdbchgg/wingetjs",
+  "version": "0.1.0",
+  "description": "A JavaScript/TypeScript wrapper library for the Windows Package Manager (winget) CLI. Search, install, list, upgrade, and manage packages programmatically.",
+  "keywords": [
+    "cli-wrapper",
+    "package-manager",
+    "typescript",
+    "windows",
+    "winget"
+  ],
   "license": "MIT",
-  "author": "Author Name <author.name@mail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/author/library.git"
-  },
+  "author": "bdbch",
   "files": [
     "dist"
   ],
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "development": "./src/index.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "development": "./src/index.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -28,15 +41,16 @@
     "dev": "vp pack --watch",
     "test": "vp test",
     "check": "vp check",
-    "prepublishOnly": "vp run build",
-    "prepare": "vp config"
+    "prepublishOnly": "vp pack"
   },
   "devDependencies": {
     "@types/node": "^25.6.2",
     "@typescript/native-preview": "7.0.0-dev.20260509.2",
-    "bumpp": "^11.1.0",
     "typescript": "^6.0.3",
     "vite-plus": "^0.1.20"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "packageManager": "pnpm@11.5.0"
 }
