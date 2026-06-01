@@ -1,6 +1,6 @@
 {
   "name": "@bdbchgg/wingetjs",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha.1",
   "description": "A JavaScript/TypeScript wrapper library for the Windows Package Manager (winget) CLI. Search, install, list, upgrade, and manage packages programmatically.",
   "keywords": [
     "cli-wrapper",
@@ -21,14 +21,14 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs",
         "development": "./src/index.ts",
-        "default": "./dist/index.mjs"
+        "types": "./dist/index.d.mts"
       },
       "require": {
-        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs",
         "development": "./src/index.ts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/index.d.cts"
       }
     },
     "./package.json": "./package.json"
@@ -38,14 +38,14 @@
   },
   "scripts": {
     "build": "vp pack",
-    "dev": "vp pack --watch",
-    "test": "vp test",
     "check": "vp check",
-    "prepublishOnly": "vp pack",
+    "dev": "vp pack --watch",
     "oxrls": "oxrls",
     "oxrls:bump": "oxrls bump",
+    "oxrls:status": "oxrls status",
     "oxrls:version": "oxrls new",
-    "oxrls:status": "oxrls status"
+    "prepublishOnly": "vp pack",
+    "test": "vp test"
   },
   "devDependencies": {
     "@bdbchgg/oxrls": "1.0.0-alpha.4",

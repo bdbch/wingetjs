@@ -10,5 +10,10 @@
   "syncCargoToml": false,
   "fixed": [],
   "linked": [],
-  "preMode": []
+  "preMode": [
+    {
+      "tag": "alpha",
+      "packages": ["@bdbchgg/wingetjs"]
+    }
+  ]
 }
