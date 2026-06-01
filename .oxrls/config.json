@@ -1,0 +1,14 @@
+{
+  "schema": "https://oxrelease.dev/schema.json",
+  "releaseDir": ".oxrls",
+  "changelog": true,
+  "generatePackagesChangelog": false,
+  "generateGlobalChangelog": false,
+  "updateInternalDependencies": "patch",
+  "baseBranch": "main",
+  "access": "public",
+  "syncCargoToml": false,
+  "fixed": [],
+  "linked": [],
+  "preMode": []
+}
